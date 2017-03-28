@@ -35,7 +35,7 @@ signin.addEventListener("click", function(event){
 })
 
 // Logga ut den autentiserade användaren
-signout.addEventListener("click", function(event){
+/*signout.addEventListener("click", function(event){
     firebase.auth().signOut()
         .then(function(result) {
     delete sessionStorage.user;
@@ -46,5 +46,5 @@ signout.addEventListener("click", function(event){
 .catch(function(error) {
     console.log(error);
 });
-})
+})*/
 }
