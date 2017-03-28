@@ -20,7 +20,7 @@ signin.addEventListener("click", function(event){
         
     else {
        
-        data = JSON.parse(user);        
+        let data = JSON.parse(user);        
         let status = document.getElementById("status");
         status.innerHTML = data.user.displayName;
         let image = document.getElementById("divImage");
