@@ -6,7 +6,13 @@ body {
 
 #status {
     border: 1px solid black;
-    position: inherit;
+    height: 50px;
+    
+}
+
+#divImage {
+    width: 200px;
+    height: 150px;
     
 }
 button {

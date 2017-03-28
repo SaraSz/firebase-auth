@@ -22,9 +22,9 @@ signin.addEventListener("click", function(event){
        
         let data = JSON.parse(user);        
         let status = document.getElementById("status");
-        status.innerHTML = data.user.displayName;
+        status.innerHTML = data.displayName;
         let image = document.getElementById("divImage");
-        image.setAttribute('src', data.user.photoURL);
+        image.setAttribute('src', data.photoURL);
         console.log(user);
     }
         }
