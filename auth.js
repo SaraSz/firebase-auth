@@ -13,10 +13,11 @@ signin.addEventListener("click", function(event){
      let user = sessionStorage.user;
         if(result.user != null){
             window.sessionStorage.user = JSON.stringify(result.user);
-            
-        if(user === undefined || user === null){
-            signout.disabled = true;
             }
+            
+            if(user === undefined || user === null){
+            signout.disabled = true;
+            
         
     else {
        
@@ -25,9 +26,10 @@ signin.addEventListener("click", function(event){
         status.innerHTML = data.displayName;
         let image = document.getElementById("divImage");
         image.setAttribute('src', data.photoURL);
-        console.log(data.photoURL);
+        console.log(user);
     }
-        }
+            }
+        
     })
     .catch((error)=>{
         console.log(error);
