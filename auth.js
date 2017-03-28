@@ -21,10 +21,11 @@ signin.addEventListener("click", function(event){
     else {
        
         user = JSON.parse(user);
-        let image = document.getElementById("divImage");
+        
         let status = document.getElementById("status");
         status.innerHTML = user.displayName;
-        image.setAttribute("src", user.photoURL);
+        let image = document.getElementById("divImage");
+        image.setAttribute('src', user.photoURL);
     }
         }
     })
