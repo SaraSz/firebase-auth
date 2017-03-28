@@ -25,7 +25,7 @@ signin.addEventListener("click", function(event){
         status.innerHTML = data.displayName;
         let image = document.getElementById("divImage");
         image.setAttribute('src', data.photoURL);
-        console.log(user);
+        console.log(data.photoURL);
     }
         }
     })
@@ -35,16 +35,16 @@ signin.addEventListener("click", function(event){
 })
 
 // Logga ut den autentiserade användaren
-/*signout.addEventListener("click", function(event){
+signout.addEventListener("click", function(event){
     firebase.auth().signOut()
         .then(function(result) {
     delete sessionStorage.user;
-    status.innerHTML = "";
+    status.innerHTML = "You are logged out!";
     console.log(result);
    
 })
 .catch(function(error) {
     console.log(error);
 });
-})*/
+})
 }
