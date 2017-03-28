@@ -2,8 +2,7 @@ window.onload = function(){ "use strict";
                            
 let signin = document.getElementById("signin");
 let signout = document.getElementById("signout");
-let status = document.getElementById("status");
-let image = document.getElementById("divImage");
+
                          
 let provider = new firebase.auth.GithubAuthProvider();
                              
@@ -22,9 +21,9 @@ firebase.auth().signInWithPopup(provider)
         }
     else {
         user = JSON.parse(user);
-        console.log(user);
-        
-        status.innerHTML = user.user.displayName;
+        let image = document.getElementById("divImage");
+        let status = document.getElementById("status");
+        status.innerHTML = user.displayName;
         image.setAttribute("src", user.photoURL);
     }
     })
