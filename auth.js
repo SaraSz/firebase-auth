@@ -22,6 +22,7 @@ firebase.auth().signInWithPopup(provider)
         }
     else {
         user = JSON.parse(user);
+        console.log(user);
         status.innerHTML = user.displayName;
         image.setAttribute("src", user.photoURL);
     }
