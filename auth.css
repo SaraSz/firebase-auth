@@ -4,6 +4,11 @@ body {
     margin-top: 20%;
 }
 
+#status {
+    border: 1px solid black;
+    position: inherit;
+    
+}
 button {
    border-top: 1px solid #735d29;
    background: #c4ac85;
