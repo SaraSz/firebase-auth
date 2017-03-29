@@ -9,7 +9,7 @@ let provider = new firebase.auth.GithubAuthProvider();
 signin.addEventListener("click", function(event){
     firebase.auth().signInWithPopup(provider)
     .then((result)=>{
-        console.log(result);
+        console.log(result.user);
      
         if(result.user != null){
             let user = JSON.stringify(result.user);
@@ -25,7 +25,7 @@ signin.addEventListener("click", function(event){
         status.innerHTML = data.displayName;
         let image = document.getElementById("divImage");
         image.setAttribute('src', data.photoURL);
-        console.log(user);
+        console.log(result.user);
     }
             
         }
