@@ -4,6 +4,8 @@ let signin = document.getElementById("signin");
 let signout = document.getElementById("signout");
                         
 let provider = new firebase.auth.GithubAuthProvider();
+                           
+let local = localStorage.getItem("image");
                              
 console.log("Innan event.");                             
 signin.addEventListener("click", function(event){
@@ -21,7 +23,7 @@ signin.addEventListener("click", function(event){
             
             let image = document.getElementById("divImage");
             //image.setAttribute("src", data.photoURL);
-            localstorage.getItem("image", data.photoURL);
+            localstorage.setItem("image", data.photoURL);
             
             console.log(result.user);
             console.log("photoURL: " + data.photoURL);
