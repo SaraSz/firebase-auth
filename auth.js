@@ -20,7 +20,8 @@ signin.addEventListener("click", function(event){
             status.innerHTML = data.displayName;
             
             let image = document.getElementById("divImage");
-            image.setAttribute("src", data.photoURL);
+            //image.setAttribute("src", data.photoURL);
+            localstorage.getItem("image", data.photoURL);
             
             console.log(result.user);
             console.log("photoURL: " + data.photoURL);
