@@ -12,13 +12,16 @@ signin.addEventListener("click", function(event){
         console.log("Vi testar Sara: " + result.user);
      
         if(result.user != null){
-            let user = JSON.stringify(result.user);
             
-            let data = JSON.parse(user);        
+            let user = JSON.stringify(result.user);
+            let data = JSON.parse(user);    
+            
             let status = document.getElementById("status");
             status.innerHTML = data.displayName;
-            let image = document.getElementById("divImage");
-            image.setAttribute("src", data.photoURL);
+            
+            /*let image = document.getElementById("divImage");
+            image.setAttribute("src", data.photoURL);*/
+            
             console.log(result.user);
             console.log("photoURL: " + data.photoURL);
         }
