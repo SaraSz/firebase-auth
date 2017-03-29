@@ -9,29 +9,15 @@ let provider = new firebase.auth.GithubAuthProvider();
 signin.addEventListener("click", function(event){
     firebase.auth().signInWithPopup(provider)
     .then((result)=>{
-        console.log(result);
-        
+        console.log(result);        
      let data = result.user;
             
-            if(data === undefined || user === null){
-            signout.disabled = true;
-            }
-/*
-    let data = result.user;
-    if(data ===  undefined || data === null){
-        loggut.disabled = true;  
-    }else{
-       let userInfo = document.getElementById(”userInfo”) ;
-      let data = result.user;
-     userInfo.innerHTML = data.displayName;
-     let imageDiv = document.getElementById(”imageDiv”);
-     imageDiv.setAttribute( 'src', data.photoURL );
-   }
-}
- })*/       
+    if(data === undefined || user === null){
+        signout.disabled = true;
+            }       
     else {
        
-        //let data = result.user;        
+        let data = result.user;        
         let status = document.getElementById("status");
         status.innerHTML = data.displayName;
         let image = document.getElementById("divImage");
