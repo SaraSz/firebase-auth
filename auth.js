@@ -14,20 +14,17 @@ signin.addEventListener("click", function(event){
         if(result.user != null){
             let user = JSON.stringify(result.user);
             
-            if(user === undefined || user === null){
+            let data = JSON.parse(user);        
+            let status = document.getElementById("status");
+            status.innerHTML = data.displayName;
+            let image = document.getElementById("divImage");
+            image.setAttribute("src", data.photoURL);
+            console.log(result.user);
+            console.log(image);
+            
+        else if(user === undefined || user === null){
             signout.disabled = true;
             }
-        
-    else {
-       
-        let data = JSON.parse(user);        
-        let status = document.getElementById("status");
-        status.innerHTML = data.displayName;
-        let image = document.getElementById("divImage");
-        image.setAttribute("src", data.photoURL);
-        console.log(result.user);
-        console.log(image);
-    }
             
         }
     })
@@ -36,7 +33,7 @@ signin.addEventListener("click", function(event){
     });
 })
 
-/* Logga ut den autentiserade användaren
+//Logga ut den autentiserade användaren
 signout.addEventListener("click", function(event){
     firebase.auth().signOut()
         .then(function(result) {
@@ -48,5 +45,5 @@ signout.addEventListener("click", function(event){
 .catch(function(error) {
     console.log(error);
 });
-})*/
+})
 }
