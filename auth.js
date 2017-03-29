@@ -2,10 +2,9 @@ window.onload = function(){ "use strict";
                            
 let signin = document.getElementById("signin");
 let signout = document.getElementById("signout");
-                        
-let provider = new firebase.auth.GithubAuthProvider();
+let image = document.getElementById("divImage");   
                            
-let local = localStorage.getItem("image");
+let provider = new firebase.auth.GithubAuthProvider();
                              
 console.log("Innan event.");                             
 signin.addEventListener("click", function(event){
@@ -20,13 +19,12 @@ signin.addEventListener("click", function(event){
             
             let status = document.getElementById("status");
             status.innerHTML = data.displayName;
-            
-            let image = document.getElementById("divImage");
+
             //image.setAttribute("src", data.photoURL);
-            localstorage.setItem("image", data.photoURL);
+            localStorage.setItem("imageURL", data.photoURL);
             
             console.log(result.user);
-            console.log("photoURL: " + data.photoURL);
+            console.log("photoURL: " + localStorage.getItem("imageURL"));
         }
             
         else if(user === undefined || user === null){
