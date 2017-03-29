@@ -10,9 +10,9 @@ signin.addEventListener("click", function(event){
     firebase.auth().signInWithPopup(provider)
     .then((result)=>{
         console.log(result);
-     let user = sessionStorage.user;
+     
         if(result.user != null){
-            window.sessionStorage.user = JSON.stringify(result.user);
+            let user = JSON.stringify(result.user);
             
             if(user === undefined || user === null){
             signout.disabled = true;
