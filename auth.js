@@ -19,8 +19,8 @@ signin.addEventListener("click", function(event){
             let status = document.getElementById("status");
             status.innerHTML = data.displayName;
             
-            /*let image = document.getElementById("divImage");
-            image.setAttribute("src", data.photoURL);*/
+            let image = document.getElementById("divImage");
+            image.setAttribute("src", data.photoURL);
             
             console.log(result.user);
             console.log("photoURL: " + data.photoURL);
@@ -29,8 +29,7 @@ signin.addEventListener("click", function(event){
         else if(user === undefined || user === null){
             signout.disabled = true;
             }
-            
-        
+      
     })
     .catch((error)=>{
         console.log(error);
