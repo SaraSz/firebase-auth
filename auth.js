@@ -9,29 +9,33 @@ let provider = new firebase.auth.GithubAuthProvider();
 signin.addEventListener("click", function(event){
     firebase.auth().signInWithPopup(provider)
     .then((result)=>{
-        console.log(result);        
-     let data = result.user;
+        console.log(result);
+     
+        if(result.user != null){
+            let user = JSON.stringify(result.user);
             
-    if(data === undefined || user === null){
-        signout.disabled = true;
-            }       
+            if(user === undefined || user === null){
+            signout.disabled = true;
+            }
+        
     else {
        
-        let data = result.user;        
+        let data = JSON.parse(user);        
         let status = document.getElementById("status");
         status.innerHTML = data.displayName;
         let image = document.getElementById("divImage");
         image.setAttribute('src', data.photoURL);
         console.log(user);
     }
-                   
+            
+        }
     })
     .catch((error)=>{
         console.log(error);
     });
 })
 
-// Logga ut den autentiserade användaren
+/* Logga ut den autentiserade användaren
 signout.addEventListener("click", function(event){
     firebase.auth().signOut()
         .then(function(result) {
@@ -43,5 +47,5 @@ signout.addEventListener("click", function(event){
 .catch(function(error) {
     console.log(error);
 });
-})
+})*/
 }
