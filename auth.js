@@ -5,11 +5,11 @@ let signout = document.getElementById("signout");
                         
 let provider = new firebase.auth.GithubAuthProvider();
                              
-                             
+console.log("Innan event.");                             
 signin.addEventListener("click", function(event){
     firebase.auth().signInWithPopup(provider)
     .then((result)=>{
-        console.log(result.user);
+        console.log("Vi testar Sara: " + result.user);
      
         if(result.user != null){
             let user = JSON.stringify(result.user);
