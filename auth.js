@@ -10,25 +10,35 @@ signin.addEventListener("click", function(event){
     firebase.auth().signInWithPopup(provider)
     .then((result)=>{
         console.log(result);
-     
-        if(result.user != null){
-            let user = JSON.stringify(result.user);
+        
+     let data = result.user;
             
-            if(user === undefined || user === null){
+            if(data === undefined || user === null){
             signout.disabled = true;
             }
-        
+/*
+    let data = result.user;
+    if(data ===  undefined || data === null){
+        loggut.disabled = true;  
+    }else{
+       let userInfo = document.getElementById(”userInfo”) ;
+      let data = result.user;
+     userInfo.innerHTML = data.displayName;
+     let imageDiv = document.getElementById(”imageDiv”);
+     imageDiv.setAttribute( 'src', data.photoURL );
+   }
+}
+ })*/       
     else {
        
-        let data = JSON.parse(user);        
+        //let data = result.user;        
         let status = document.getElementById("status");
         status.innerHTML = data.displayName;
         let image = document.getElementById("divImage");
         image.setAttribute('src', data.photoURL);
         console.log(user);
     }
-            
-        }
+                   
     })
     .catch((error)=>{
         console.log(error);
