@@ -20,7 +20,7 @@ signin.addEventListener("click", function(event){
             let image = document.getElementById("divImage");
             image.setAttribute("src", data.photoURL);
             console.log(result.user);
-            console.log(image);
+            console.log("photoURL: " + data.photoURL);
         }
             
         else if(user === undefined || user === null){
