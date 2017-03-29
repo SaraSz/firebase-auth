@@ -21,12 +21,13 @@ signin.addEventListener("click", function(event){
             image.setAttribute("src", data.photoURL);
             console.log(result.user);
             console.log(image);
+        }
             
         else if(user === undefined || user === null){
             signout.disabled = true;
             }
             
-        }
+        
     })
     .catch((error)=>{
         console.log(error);
