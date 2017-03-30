@@ -21,8 +21,8 @@ signinBtn.addEventListener("click", function(event){
             
             status.innerHTML = "You are logged in as: " + user.displayName;
             
-            specialBtn.style.display = "block";
-            signoutBtn.style.display = "block";
+            specialBtn.style.display = "inline-block";
+            signoutBtn.style.display = "inline-block";
             
             console.log("Inloggning lyckades med status: " + result.user);
         }
