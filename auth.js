@@ -7,7 +7,7 @@ let provider = new firebase.auth.GithubAuthProvider();
 let status = document.getElementById("status");
 
                            
-specialBtn.disabled = true;                             
+specialBtn.style.display = "none";                             
 console.log("Innan event."); 
                            
 signinBtn.addEventListener("click", function(event){
@@ -42,6 +42,7 @@ signoutBtn.addEventListener("click", function(event){
     status.innerHTML = "You are logged out!";
     console.log("Utloggning lyckades!");
     signoutBtn.disabled = true;
+    specialBtn.disabled = true;
    
 })
 .catch(function(error) {
