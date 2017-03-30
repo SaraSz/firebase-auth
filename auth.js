@@ -42,7 +42,7 @@ signoutBtn.addEventListener("click", function(event){
     status.innerHTML = "You are logged out!";
     console.log("Utloggning lyckades!");
     signoutBtn.disabled = true;
-    specialBtn.disabled = true;
+    specialBtn.style.display = "none";
    
 })
 .catch(function(error) {
