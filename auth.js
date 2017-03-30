@@ -1,7 +1,7 @@
 window.onload = function(){ "use strict";
                            
-let signin = document.getElementById("signin");
-let signout = document.getElementById("signout");   
+let signinBtn = document.getElementById("signinBtn");
+let signoutBtn = document.getElementById("signoutBtn");   
 let specialBtn = document.getElementById("specialBtn");                           
 let provider = new firebase.auth.GithubAuthProvider();
 let status = document.getElementById("status");
@@ -10,7 +10,7 @@ let status = document.getElementById("status");
 specialBtn.disabled = true;                             
 console.log("Innan event."); 
                            
-signin.addEventListener("click", function(event){
+signinBtn.addEventListener("click", function(event){
     firebase.auth().signInWithPopup(provider).then(function(result){
         
         let user = result.user;
@@ -19,7 +19,6 @@ signin.addEventListener("click", function(event){
         if(result.user != null){    
             
             status.innerHTML = "You are logged in as: " + user.displayName;
-            
             
             specialBtn.disabled = false;
             
@@ -37,11 +36,12 @@ signin.addEventListener("click", function(event){
 })
 
 //Logga ut den autentiserade användaren
-signout.addEventListener("click", function(event){
+signoutBtn.addEventListener("click", function(event){
     firebase.auth().signOut()
         .then(function(result) {
     status.innerHTML = "You are logged out!";
     console.log("Utloggning lyckades!");
+    signoutBtn.disabled = true;
    
 })
 .catch(function(error) {
