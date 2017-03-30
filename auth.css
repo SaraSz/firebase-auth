@@ -1,14 +1,12 @@
 body {
-    display: block;
-    text-align: center;
-    margin-top: 20%;
+    margin-top: 5%;
 }
 
 #status {
     border: 1px solid lightgrey;
     width: 250px;
     height: 100px;
-    margin: 0 auto;
+    
     
 }
 
