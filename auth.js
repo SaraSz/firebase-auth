@@ -27,7 +27,7 @@ signin.addEventListener("click", function(event){
         }
             
         else if(user === undefined || user === null){
-            status.innerHTML = "Something went wrong.";
+            status.innerHTML = "Sorry, something went wrong.";
             }
       
     })
@@ -41,51 +41,12 @@ signout.addEventListener("click", function(event){
     firebase.auth().signOut()
         .then(function(result) {
     status.innerHTML = "You are logged out!";
-    console.log("Utloggning lyckades: " + result);
+    console.log("Utloggning lyckades!");
    
 })
 .catch(function(error) {
-    console.log("Utloggning misslyckades: " + error);
+    console.log("Utloggning misslyckades!");
     status.innerHTML = "Sign out failed.";
 });
 })
 }
-
-/* 
-
- 
-	
-
-    
-    
-     vipBtn.addEventListener("click", function(event) {
-	window.alert("hej emma");
-	});
-    
-    
-	
-	logoutBtn.addEventListener("click", function(event) {
-        userEmail = null;
-        vipBtn.disabled = true;
-		firebase.auth().signInWithPopup(provider)
-		firebase.auth().signOut().then(function(result) {
-			// Utloggning lyckades
-            console.log("utloggning lyckades");
-            infoText.innerHTML = `Du är inte inloggad`;
-            
-		}).catch(function(error) {
-			console.log("utloggning misslyckades");
-			infoTextFail.innerHTML = "Utloggning misslyckades";
-		});
-		//infoText.innerHTML = "";
-		autBtn.style.display = "inherit";
-		logoutBtn.style.display = "none";
-	});
-    
-    
-  
-    
-    
-    
-    
-});*/
