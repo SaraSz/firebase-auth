@@ -20,7 +20,7 @@ signin.addEventListener("click", function(event){
             
             status.innerHTML = "You are logged in as: " + user.displayName;
             
-            signin.disabled = true;
+            
             specialBtn.disabled = false;
             
             console.log("Inloggning lyckades med status: " + result.user);
