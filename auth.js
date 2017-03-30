@@ -37,6 +37,10 @@ signinBtn.addEventListener("click", function(event){
     });
 })
 
+specialBtn.addEventListener("click", function(event){
+    window.alert("Woho, you clicked the special button!");
+});
+
 //Logga ut den autentiserade användaren
 signoutBtn.addEventListener("click", function(event){
     firebase.auth().signOut()
