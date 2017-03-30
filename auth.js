@@ -21,7 +21,7 @@ signin.addEventListener("click", function(event){
             let data = JSON.parse(user);    
             
             let status = document.getElementById("status");
-            status.innerHTML = "You are logged in as: " data.displayName;
+            status.innerHTML = "You are logged in as: " + data.displayName;
 
             //image.setAttribute("src", data.photoURL);
             localStorage.setItem("imageURL", data.photoURL);
