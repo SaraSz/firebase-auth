@@ -24,7 +24,7 @@ signinBtn.addEventListener("click", function(event){
             specialBtn.style.display = "inline-block";
             signoutBtn.style.display = "inline-block";
             
-            console.log("Inloggning lyckades med status: " + result.user);
+            console.log("Inloggning lyckades!" + result.user);
         }
             
         else if(user === undefined || user === null){
