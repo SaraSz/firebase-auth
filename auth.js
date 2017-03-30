@@ -5,7 +5,6 @@ let signout = document.getElementById("signout");
 let specialBtn = document.getElementById("specialBtn");                           
 let provider = new firebase.auth.GithubAuthProvider();
                            
-let user = JSON.stringify(result.user);
                              
 console.log("Innan event.");
                            
@@ -17,7 +16,8 @@ signin.addEventListener("click", function(event){
         if(result.user != null){
             
             signin.disabled = true;
-
+            
+            let user = JSON.stringify(result.user);
             let data = JSON.parse(user);    
             
             let status = document.getElementById("status");
