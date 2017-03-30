@@ -15,15 +15,15 @@ signin.addEventListener("click", function(event){
      
         if(result.user != null){
             
-            signin.disabled = true;
-            
-            let user = JSON.stringify(result.user);
+            let user = result.user;
             let data = JSON.parse(user);    
             
             let status = document.getElementById("status");
             status.innerHTML = "You are logged in as: " + data.displayName;
             
-            console.log(result.user);
+            signin.disabled = true;
+            
+            console.log("Inloggning lyckades med status: " + result.user);
         }
             
         else if(user === undefined || user === null){
@@ -38,16 +38,14 @@ signin.addEventListener("click", function(event){
 
 //Logga ut den autentiserade användaren
 signout.addEventListener("click", function(event){
-    firebase.auth().signInWithPopup(provider)
     firebase.auth().signOut()
         .then(function(result) {
-    //localStorage.removeItem("user", user);
     status.innerHTML = "You are logged out!";
-    console.log(result);
+    console.log("Utloggning lyckades: " + result);
    
 })
 .catch(function(error) {
-    console.log(error);
+    console.log("Utloggning misslyckades: " +error);
 });
 })
 }
